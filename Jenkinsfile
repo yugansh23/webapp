@@ -59,7 +59,7 @@ pipeline {
 		    steps {
 			sh 'rm nikto-output.xml || true'
 			sh 'docker pull secfigo/nikto:latest'
-			sh 'docker run --user $(id -u):$(id -g) --rm -v $(pwd):/report -i secfigo/nikto:latest -h 172.17.0.1 -p 8081 -output /report/nikto-output.xml'
+			sh 'docker run --user $(id -u):$(id -g) --rm -v $(pwd):/report -i secfigo/nikto:latest -h 172.17.0.1/WebApp -p 8081 -output /report/nikto-output.xml'
 			sh 'cat nikto-output.xml'   
 		    }
 	    }   
