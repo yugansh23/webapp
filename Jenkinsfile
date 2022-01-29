@@ -55,6 +55,13 @@ pipeline {
 			         sh 'docker run -p 8090:8080 -t owasp/zap2docker-stable zap-baseline.py -t http://172.17.0.1:8081/WebApp/ || true'
 			   }
 		}    
-	    
+	  stage ('Nikto Scan') {
+		    steps {
+			sh 'rm nikto-output.xml || true'
+			sh 'docker pull secfigo/nikto:latest'
+			sh 'docker run --user $(id -u):$(id -g) --rm -v $(pwd):/report -i secfigo/nikto:latest -h 172.17.0.1 -p 8081 -output /report/nikto-output.xml'
+			sh 'cat nikto-output.xml'   
+		    }
+	    }   
      }
 }
