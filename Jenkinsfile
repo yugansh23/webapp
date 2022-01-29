@@ -53,7 +53,7 @@ pipeline {
 	stage ('DAST') {
 		      	steps {
 			         sh 'docker run -p 8090:8080 -t owasp/zap2docker-stable zap-baseline.py -t http://$(ip -f inet -o addr show docker0 | awk '{print $4}' | cut -d '/' -f 1):8081/WebApp/ || true'
-			   	}
+			   }
 		}    
 	    
      }
