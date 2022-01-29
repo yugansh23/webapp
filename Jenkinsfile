@@ -21,6 +21,15 @@ pipeline {
 	    }
 	    }
 	    
+	    stage ('Source-Composition-Analysis') {
+		steps {
+		     sh 'rm owasp-* || true'
+		     sh 'wget https://raw.githubusercontent.com/yugansh23/JavaVulnerableLab/master/owasp_dependency_check.sh'	
+		     sh 'chmod +x owasp_dependency_check.sh'
+		     sh 'bash owasp_dependency_check.sh'
+		     sh 'cat /home/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
+		}
+	} 
 	  stage ('Build') {
             steps {
                 sh 'mvn clean package'
