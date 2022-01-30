@@ -66,7 +66,7 @@ pipeline {
 	    stage ('SSL Checks') {
 		    steps {
 			sh 'pip install sslyze==5.0.1'
-			sh 'python3 -m sslyze 127.0.0.1:8081 --mozilla-config=modern mozilla.com --json_out sslyze-output.json || true'
+			sh 'python3 -m sslyze 127.0.0.1:8081 --mozilla_config=modern --json_out sslyze-output.json || true'
 			sh 'cat sslyze-output.json'
 		    }
 	    }
