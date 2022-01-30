@@ -79,7 +79,7 @@ pipeline {
 			sh 'python3 upload-results.py --host 127.0.0.1:8080 --api_key 12621bfb2cb9391bff1f750e7260f57ae2ec2368 --engagement_id 4 --result_file trufflehog --username admin --scanner "SSL Labs Scan"'
 			sh 'python3 upload-results.py --host 127.0.0.1:8080 --api_key 12621bfb2cb9391bff1f750e7260f57ae2ec2368 --engagement_id 4 --result_file /home/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml --username admin --scanner "Dependency Check Scan"'
 			sh 'python3 upload-results.py --host 127.0.0.1:8080 --api_key 12621bfb2cb9391bff1f750e7260f57ae2ec2368 --engagement_id 4 --result_file sslyze-output.json --username admin --scanner "SSL Labs Scan"'
-			sh 'python3 upload-results.py --host 127.0.0.1:8080 --api_key 12621bfb2cb9391bff1f750e7260f57ae2ec2368 --engagement_id 4 --result_file nikto-output.xml --username admin'
+			sh 'python3 upload-results.py --host 127.0.0.1:8080 --api_key 12621bfb2cb9391bff1f750e7260f57ae2ec2368 --engagement_id 4 --result_file nikto-output.xml --username admin --scanner "Dependency Check Scan"'
 			    
 		    }
 	    }
