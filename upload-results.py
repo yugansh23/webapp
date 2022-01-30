@@ -45,12 +45,12 @@ def upload_results(host, user, api_key, scanner, result_file, engagement_id, ver
 
     # Make request to API
     response = requests.post(
-        IMPORT_SCAN_URL, headers=headers, files=files, data=json, verify=verify)
+    IMPORT_SCAN_URL, headers=headers, files=files, data=json, verify=verify)
      # print r.request.body
      # print r.request.headers
      # print r.status_code
      # print r.text
-        return response.status_code
+    return response.status_code
 
 
 if __name__ == "__main__":
