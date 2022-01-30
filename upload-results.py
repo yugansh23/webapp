@@ -9,7 +9,7 @@ import requests
 def upload_results(host, user, api_key, scanner, result_file, engagement_id, verify=False):
     API_URL = "http://"+host+"/api/v2"
     IMPORT_SCAN_URL = API_URL + "/importscan/"
-    AUTH_TOKEN = "ApiKey " + user + ":" + api_key
+    AUTH_TOKEN = "Authorization" + ":" + Token + api_key
 
     headers = dict()
     json = dict()
