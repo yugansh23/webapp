@@ -76,11 +76,11 @@ pipeline {
 			sh 'pip install requests'
 			sh 'wget https://raw.githubusercontent.com/yugansh23/webapp/master/upload-results.py'
 			sh 'chmod +x upload-results.py'
-			sh 'python upload-results.py --host 127.0.0.1:8080 --api_key 12621bfb2cb9391bff1f750e7260f57ae2ec2368 --engagement_id 4 --result_file trufflehog --username Admin --scanner "SSL Labs Scan"'
-			sh 'python upload-results.py --host 127.0.0.1:8080 --api_key 12621bfb2cb9391bff1f750e7260f57ae2ec2368 --engagement_id 4 --result_file /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml --username Admin --scanner "Dependency Check Scan"'
-			sh 'python upload-results.py --host 127.0.0.1:8080 --api_key 12621bfb2cb9391bff1f750e7260f57ae2ec2368 --engagement_id 4 --result_file nmap --username Admin --scanner "Nmap Scan"'
-			sh 'python upload-results.py --host 127.0.0.1:8080 --api_key 12621bfb2cb9391bff1f750e7260f57ae2ec2368 --engagement_id 4 --result_file sslyze-output.json --username Admin --scanner "SSL Labs Scan"'
-			sh 'python upload-results.py --host 127.0.0.1:8080 --api_key 12621bfb2cb9391bff1f750e7260f57ae2ec2368 --engagement_id 4 --result_file nikto-output.xml --username Admin'
+			sh 'python3 upload-results.py --host 127.0.0.1:8080 --api_key 12621bfb2cb9391bff1f750e7260f57ae2ec2368 --engagement_id 4 --result_file trufflehog --username Admin --scanner "SSL Labs Scan"'
+			sh 'python3 upload-results.py --host 127.0.0.1:8080 --api_key 12621bfb2cb9391bff1f750e7260f57ae2ec2368 --engagement_id 4 --result_file /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml --username Admin --scanner "Dependency Check Scan"'
+			sh 'python3 upload-results.py --host 127.0.0.1:8080 --api_key 12621bfb2cb9391bff1f750e7260f57ae2ec2368 --engagement_id 4 --result_file nmap --username Admin --scanner "Nmap Scan"'
+			sh 'python3 upload-results.py --host 127.0.0.1:8080 --api_key 12621bfb2cb9391bff1f750e7260f57ae2ec2368 --engagement_id 4 --result_file sslyze-output.json --username Admin --scanner "SSL Labs Scan"'
+			sh 'python3 upload-results.py --host 127.0.0.1:8080 --api_key 12621bfb2cb9391bff1f750e7260f57ae2ec2368 --engagement_id 4 --result_file nikto-output.xml --username Admin'
 			    
 		    }
 	    }
