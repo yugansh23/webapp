@@ -18,7 +18,7 @@ def upload_results(host, user, api_key, scanner, result_file, engagement_id, ver
 	headers['Authorization'] = AUTH_TOKEN
 	print headers
 
-	# Prepare JSON data to send to API
+	
 	# json= {
 	#   "minimum_severity": "Low",
 	#   "scan_date": datetime.now().strftime("%Y-%m-%d"),
