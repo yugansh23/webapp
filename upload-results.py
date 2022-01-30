@@ -8,8 +8,8 @@ import requests
 # set verify to False if ssl cert is self-signed
 def upload_results(host, user, api_key, scanner, result_file, engagement_id, verify=False):
     API_URL = "http://"+host+"/api/v1"
-        IMPORT_SCAN_URL = API_URL + "/importscan/"
-        AUTH_TOKEN = "ApiKey " + user + ":" + api_key
+    IMPORT_SCAN_URL = API_URL + "/importscan/"
+    AUTH_TOKEN = "ApiKey " + user + ":" + api_key
 
     headers = dict()
     json = dict()
