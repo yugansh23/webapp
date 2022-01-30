@@ -38,7 +38,7 @@ def upload_results(host, user, api_key, scanner, result_file, engagement_id, ver
     json['engagement'] = "/api/v1/engagements/" + engagement_id + "/"
     json['lead'] = "/api/v1/users/" + "1" + "/"
     json['scan_type'] = scanner
-    print json
+    print (json)
 
     # Prepare file data to send to API
     files['file'] = open(result_file)
@@ -78,6 +78,6 @@ if __name__ == "__main__":
     result = upload_results(host, user, api_key, scanner, result_file, engagement_id)
 
     if result == 201 :
-        print "Successfully uploaded the results to Defect Dojo"
+        print ("Successfully uploaded the results to Defect Dojo")
     else:
-        print "Something went wrong, please debug " + str(result)
+        print ("Something went wrong, please debug " + str(result))
