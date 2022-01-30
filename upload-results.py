@@ -18,7 +18,7 @@ def upload_results(host, user, api_key, scanner, result_file, engagement_id, ver
     # Prepare headers
     # headers = {'Authorization': 'ApiKey dojo:3e24a3ee5af0305af20a5e6224052de3ed2f6859'}
     headers['Authorization'] = AUTH_TOKEN
-    print headers
+    print (headers)
 
     # json= {
     #   "minimum_severity": "Low",
