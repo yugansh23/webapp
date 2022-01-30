@@ -53,22 +53,15 @@ def upload_results(host, user, api_key, scanner, result_file, engagement_id, ver
 
 
 if __name__ == "__main__":
-        parser = argparse.ArgumentParser(
-            description='CI/CD integration for DefectDojo')
-        parser.add_argument(
-            '--host', help="DefectDojo Hostname", required=True)
+        parser = argparse.ArgumentParser(description='CI/CD integration for DefectDojo')
+        parser.add_argument('--host', help="DefectDojo Hostname", required=True)
         parser.add_argument('--api_key', help="API Key", required=True)
-        parser.add_argument(
-            '--username', help="Username of Defect dojo user", required=True)
-        parser.add_argument('--engagement_id',
-                            help="Engagement ID (optional)", required=True)
-        parser.add_argument(
-            '--result_file', help="Scanner file", required=True)
+        parser.add_argument('--username', help="Username of Defect dojo user", required=True)
+        parser.add_argument('--engagement_id', help="Engagement ID (optional)", required=True)
+        parser.add_argument('--result_file', help="Scanner file", required=True)
         parser.add_argument('--scanner', help="Type of scanner", required=True)
-        parser.add_argument(
-            '--product_id', help="DefectDojo Product ID", required=False)
-        parser.add_argument(
-            '--build_id', help="Reference to external build id", required=False)
+        parser.add_argument('--product_id', help="DefectDojo Product ID", required=False)
+        parser.add_argument('--build_id', help="Reference to external build id", required=False)
 
         # Parse out arguments
         args = vars(parser.parse_args())
