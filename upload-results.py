@@ -7,7 +7,7 @@ import requests
 
 # set verify to False if ssl cert is self-signed
 def upload_results(host, user, api_key, scanner, result_file, engagement_id, verify=False):
-    API_URL = "http://"+host+"/api/v1"
+    API_URL = "http://"+host+"/api/v2"
     IMPORT_SCAN_URL = API_URL + "/importscan/"
     AUTH_TOKEN = "ApiKey " + user + ":" + api_key
 
@@ -35,8 +35,8 @@ def upload_results(host, user, api_key, scanner, result_file, engagement_id, ver
     json['verified'] = False
     json['tags'] = ""
     json['active'] = False
-    json['engagement'] = "/api/v1/engagements/" + engagement_id + "/"
-    json['lead'] = "/api/v1/users/" + "1" + "/"
+    json['engagement'] = "/api/v2/engagements/" + engagement_id + "/"
+    json['lead'] = "/api/v2/users/" + "1" + "/"
     json['scan_type'] = scanner
     print (json)
 
