@@ -36,7 +36,7 @@ def upload_results(host, user, api_key, scanner, result_file, engagement_id, ver
     json['tags'] = ""
     json['active'] = False
     json['engagement'] = "/api/v2/engagements/" + engagement_id + "/"
-    json['lead'] = "/api/v2/users/" + "1" + "/"
+    json['lead'] = "/api/v2/users/" + "2" + "/"
     json['scan_type'] = scanner
     print (json)
 
