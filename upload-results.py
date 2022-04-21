@@ -60,7 +60,7 @@ if __name__ == "__main__":
         parser.add_argument('--engagement_id', help="Engagement ID (optional)", required=True)
         parser.add_argument('--result_file', help="Scanner file", required=True)
         parser.add_argument('--scanner', help="Type of scanner", required=True)
-        parser.add_argument('--product_id', help="DefectDojo Product ID", required=False)
+        parser.add_argument('--product_id', help="DefectDojo Product ID", required=True)
         parser.add_argument('--build_id', help="Reference to external build id", required=False)
 
         # Parse out arguments
@@ -75,7 +75,7 @@ if __name__ == "__main__":
         build_id = args["build_id"]
 
 # upload_results(self, host, user, api_key, scanner, result_file, engagement_id, verify=False): # set verify to False if ssl cert is self-signed
-result = upload_results(host, user, api_key, scanner, result_file, engagement_id)
+result = upload_results(host, user, api_key, scanner, result_file, engagement_id, product_id)
 
 if result == 201 :
     print ("Successfully uploaded the results to Defect Dojo")
