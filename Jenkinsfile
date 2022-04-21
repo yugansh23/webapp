@@ -71,6 +71,17 @@ pipeline {
 			sh 'cat sslyze-output.json'
 		    }
 	    }
-	  	    
+	  stage ('Upload Reports to Defect Dojo') {
+		    steps {
+			sh 'pip install requests'
+			sh 'wget https://raw.githubusercontent.com/yugansh23/webapp/master/upload-results.py'
+			sh 'chmod +x upload-results.py'
+			sh 'python upload-results.py --host 127.0.0.1:8080 --api_key e05fd25b4b1ebe20750f0269ce4be651c701c2d9 --engagement_id 4 --result_file trufflehog --username yugansh --scanner "SSL Labs Scan"'
+			sh 'python upload-results.py --host 127.0.0.1:8080 --api_key e05fd25b4b1ebe20750f0269ce4be651c701c2d9 --engagement_id 4 --result_file /home/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml --username yugansh --scanner "Dependency Check Scan"'
+			sh 'python upload-results.py --host 127.0.0.1:8080 --api_key e05fd25b4b1ebe20750f0269ce4be651c701c2d9 --engagement_id 4 --result_file sslyze-output.json --username yugansh --scanner "SSL Labs Scan"'
+			sh 'python upload-results.py --host 127.0.0.1:8080 --api_key e05fd25b4b1ebe20750f0269ce4be651c701c2d9 --engagement_id 4 --result_file nikto-output.xml --username yugansh'
+			    
+		    }
+	    }	    
      }
 }
