@@ -62,6 +62,8 @@ if __name__ == "__main__":
         parser.add_argument('--scanner', help="Type of scanner", required=True)
         parser.add_argument('--product_id', help="DefectDojo Product ID", required=True)
         parser.add_argument('--build_id', help="Reference to external build id", required=False)
+        parser.add_argument('--product_name', help="product name", required=True)
+        
 
         # Parse out arguments
         args = vars(parser.parse_args())
@@ -73,6 +75,7 @@ if __name__ == "__main__":
         scanner = args["scanner"]
         engagement_id = args["engagement_id"]
         build_id = args["build_id"]
+        product_name= args["product_name"]
 
 # upload_results(self, host, user, api_key, scanner, result_file, engagement_id, verify=False): # set verify to False if ssl cert is self-signed
 result = upload_results(host, user, api_key, scanner, result_file, engagement_id, product_id)
